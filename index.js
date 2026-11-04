@@ -66,3 +66,10 @@ app.delete('/komik/:id', async (req, res) => {
         if (!komik) {
             return res.status(404).send({ message: 'Komik tidak di temukan' });
         }   
+
+        await komik.destroy();
+        res.send({ message: 'Komik berhasil di hapus' });
+    }catch (err) {
+        res.status(500).send(err);
+    }   
+});
