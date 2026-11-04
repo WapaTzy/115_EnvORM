@@ -32,17 +32,15 @@ app.post('/komik', async (req, res) => {
 });
 
 
-
-
-app.put('/komik/:id', async (req, res) => {
-    const id = req.params.id;
-    const data = req.body;
-
+app.get('/komik', async (req, res) => {
     try {
-        const komik = await db.komik.findByPk(id);
-        if (!komik) {
-            return res.status(404).send({ message: 'Komik tidak di temukan' });
-        }   
+        const komik = await db.komik.findAll();
+        res.send(komik);
+    }catch (err) {
+        res.send(err);
+    }
+});
+
 
         
         await komik.update(data);
