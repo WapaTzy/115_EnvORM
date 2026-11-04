@@ -51,7 +51,17 @@ app.put('/komik/:id', async (req, res) => {
             return res.status(404).send({ message: 'Komik tidak di temukan' });
         }   
 
-   
+        
+        await komik.update(data);
+        res.send({ message: 'Komik berhasil di update', komik });
+    }catch (err) {
+        res.statuus(500).send(err);
+    }
+});
 
-app.delete('/komik/:id', async (req, res) => {
-    const id = req.params.id;
+        await komik.destroy();
+        res.send({ message: 'Komik berhasil di hapus' });
+    }catch (err) {
+        res.status(500).send(err);
+    }   
+});
