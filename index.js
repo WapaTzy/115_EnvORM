@@ -21,15 +21,18 @@ db.sequelize.sync()
     })
 
 
-
-app.get('/komik', async (req, res) => {
+app.post('/komik', async (req, res) => {
+    const data = req.body;
     try {
-        const komik = await db.komik.findAll();
+        const komik = await db.komik.create(data);
         res.send(komik);
     }catch (err) {
         res.send(err);
     }
 });
+
+
+
 
 app.put('/komik/:id', async (req, res) => {
     const id = req.params.id;
