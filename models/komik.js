@@ -1,6 +1,7 @@
-
-            autoIncrement: true,
-            primaryKey: true,
+module.exports = (sequelize, DataTypes) => {
+    const Komik = sequelize.define("komik", {
+        id: {
+           
         },
         title: {
             type: DataTypes.STRING,
