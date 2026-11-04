@@ -5,4 +5,5 @@ POST
 PUT
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ce567bfe-0844-4c2e-89d3-141e178f323d" />
 DELETE
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/611e3dce-c57a-4794-9b9c-12c7789a7151" />
 
